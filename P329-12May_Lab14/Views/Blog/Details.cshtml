@@ -1,0 +1,13 @@
+﻿@model Blog
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="blog_box">
+            <div class="blog_img"><img src="~/images/@Model.ImageName"></div>
+            <h4 class="date_text">@Model.CreatedDate.ToString("dd MMMM")</h4>
+            <h4 class="prep_text">@Model.Title</h4>
+            <p class="lorem_text">@Model.Content</p>
+        </div>
+        <div class="read_bt"><a href="/blog">Go back</a></div>
+    </div>
+</div>

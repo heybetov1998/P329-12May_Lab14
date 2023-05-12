@@ -1,0 +1,32 @@
+﻿@model BlogViewModel
+@{
+    List<Blog> blogs = Model.Blogs;
+}
+<!-- blog section start -->
+<div class="blog_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="about_taital">Our Blog</h1>
+                <div class="bulit_icon"><img src="~/images/bulit-icon.png"></div>
+            </div>
+        </div>
+        <div class="blog_section_2">
+            <div class="row">
+                @foreach (Blog blog in blogs)
+                {
+                    <div class="col-md-6">
+                        <div class="blog_box">
+                            <div class="blog_img"><img src="~/images/@blog.ImageName"></div>
+                            <h4 class="date_text">@blog.CreatedDate.ToString("dd MMMM")</h4>
+                            <h4 class="prep_text">@blog.Title</h4>
+                            <p class="lorem_text">@blog.Content</p>
+                        </div>
+                        <div class="read_bt"><a href="/blog/details/@blog.Id">Read More</a></div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- blog section end -->
